@@ -1,9 +1,9 @@
-* {
+/* * {
     box-sizing: border-box;
-    border: 1px solid red; 
-}
+    border: 1px solid red;  */
+/* } */
 body{
-    
+    background: mistyrose; 
 
 }
 header
@@ -37,6 +37,14 @@ button {
   margin: auto; 
   width: 355px; 
   height: 70px; 
+  cursor: pointer;
+}
+
+h4{
+    font-size: 50px;
+    margin: 10px;
+    text-align: center;
+
 }
 
 
@@ -47,22 +55,73 @@ button {
     justify-content: center;
     flex-wrap: wrap;
 }
-.score-board {
+/* .score-board {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     border: 1px solid black;
-    height: 300px; 
+    height: 300px;  */
 
 
-}
 
 .game-board {
     display: flex; 
+    border: solid Black;
     flex-wrap: wrap;
     align-items: center;
     width: 500px;
     height: 500px;
-    margin: auto; 
+    margin: 20px; 
+}
+.play-again{
+    display: grid;
+    align-items: center; 
 
 }
+.box {
+    display: grid; 
+    border: solid Black;
+    height: 150px;
+    width: 150px; 
+    margin: auto; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer
+}
+
+.naught{
+    background-color: red;
+    border-radius: 50px
+}
+.cross {
+    background-color: blue
+}
+/* .naught {
+    width: 50px;
+    height: 50px; 
+    border-radius: 50px;
+    border: 10px solid green;
+}
+.cross {
+    height: 50px; 
+    width: 50px; 
+    position: relative; 
+    transform: rotate(45deg)
+}
+.cross:before, .cross:after {
+ content:"";
+ position: absolute;
+ background-color: red 
+}
+.cross:before {
+  left: 50%;
+  width: 30%; 
+  margin-left: -15%;
+  height: 100%
+}
+.cross:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+} */
