@@ -2,16 +2,28 @@
     box-sizing: border-box;
     border: 1px solid red;  */
 /* } */
+
 body{
-    background: mistyrose; 
+    background-image: url(Images/Background\ \(2\).jpg); 
+    background-size:cover; 
+
+   
 
 }
 header
 h1 {
-   border: 1px solid green; 
    text-align: center;
    font-family: 'Nova Square';
    font-size: 100px;
+   text-shadow: 2px 2px 4px #006400, 4px 4px 6px #ffffff, 6px 6px 8px #ffffff;
+}
+h4 {
+    font-family: 'nova square';
+    font-size: 50px;
+    margin: 10px;
+    margin-top: -71px;
+    text-align: center;
+
 }
 
 h3 {
@@ -38,15 +50,15 @@ button {
   width: 355px; 
   height: 70px; 
   cursor: pointer;
+  font-family: 'nova square';
+  font-size: 30px;
+  background-color: #008000;
+  color: white;
+  border-radius: 10px; 
+  margin-top:-50px;
+
+
 }
-
-h4{
-    font-size: 50px;
-    margin: 10px;
-    text-align: center;
-
-}
-
 
 .main {
     padding:20px;
@@ -55,15 +67,11 @@ h4{
     justify-content: center;
     flex-wrap: wrap;
 }
-/* .score-board {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    border: 1px solid black;
-    height: 300px;  */
-
-
-
+.playBtn{
+    display:grid;
+    align-items: center;
+    margin-bottom: 50px;
+}
 .game-board {
     display: flex; 
     border: solid Black;
@@ -71,11 +79,13 @@ h4{
     align-items: center;
     width: 500px;
     height: 500px;
-    margin: 20px; 
+    margin: 5px; 
+    background-color: #1ca50a;
 }
 .play-again{
     display: grid;
     align-items: center; 
+    margin-top: -20px
 
 }
 .box {
@@ -86,42 +96,15 @@ h4{
     margin: auto; 
     align-items: center;
     justify-content: center;
-    cursor: pointer
-}
+    cursor: pointer; 
 
-.naught{
-    background-color: red;
-    border-radius: 50px
+    /* font*/
+    font-size: 80px; 
+    font-family: 'nova square';
+    color: white;
+    background-color: #623910; 
+    transition: background-color 0.3s ease; 
 }
-.cross {
-    background-color: blue
+.box:hover {
+    background-color: #2f5300 ;
 }
-/* .naught {
-    width: 50px;
-    height: 50px; 
-    border-radius: 50px;
-    border: 10px solid green;
-}
-.cross {
-    height: 50px; 
-    width: 50px; 
-    position: relative; 
-    transform: rotate(45deg)
-}
-.cross:before, .cross:after {
- content:"";
- position: absolute;
- background-color: red 
-}
-.cross:before {
-  left: 50%;
-  width: 30%; 
-  margin-left: -15%;
-  height: 100%
-}
-.cross:after {
-    top: 50%;
-    height: 30%;
-    margin-top: -15%;
-    width: 100%;
-} */

@@ -3,10 +3,11 @@ let playAgain = document.querySelector(".play-again")
 let selection = document.querySelectorAll('.box')
 const infoDisplay = document.querySelector('#info')
 
+
 let numberOfplays = 0
-let gameHasWinner = false
-let currentPlayer = 'cross'
-let gameRunning = false
+
+let currentPlayer = 'X'
+let  = false
 
 const winningCombos = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -16,29 +17,29 @@ const winningCombos = [
 
 function handleStartPlay() {
     infoDisplay.textContent = currentPlayer + "'s turn first";
-    gameRunning = true;
     selection.forEach(function (box) {
         box.addEventListener('click', handleBoxClick, { once: true });
     });
-    playBtn.disabled = true;
+//once the button has been pressed, hide the button. 
+    playBtn.style.display = 'none' 
 
 }
 
 function handleBoxClick(event) {
     let targetBox = event.target
-    if (currentPlayer === 'cross') {
-        targetBox.classList.add('cross')
-        currentPlayer = 'naught'
+    if (currentPlayer === 'X') {
+        targetBox.textContent = 'X';
+        currentPlayer = 'O'
 
         console.log(numberOfplays)
     } else {
-        targetBox.classList.add('naught')
-        currentPlayer = 'cross'
+        targetBox.textContent = 'O';
+        currentPlayer = 'X'
 
         console.log(numberOfplays)
     }
     numberOfplays++
-    infoDisplay.textContent = "it is now " + currentPlayer + "'s go."
+    infoDisplay.textContent = "It's " + currentPlayer + "'s turn!"
 
     checkWin()
     checkDraw()
@@ -46,20 +47,28 @@ function handleBoxClick(event) {
 
 function checkWin() {
     winningCombos.forEach(function (combo) {
-        if (selection[combo[0]].classList.contains('cross') && selection[combo[1]].classList.contains('cross') && selection[combo[2]].classList.contains('cross')) {
+        if (
+            selection[combo[0]].textContent === 'X' &&
+            selection[combo[1]].textContent === 'X' &&
+            selection[combo[2]].textContent === 'X'
+        ) {
             selection.forEach(function (box) {
                 box.removeEventListener('click', handleBoxClick);
-                infoDisplay.textContent = 'cross wins!'
-                gameHasWinner = true;
+                infoDisplay.textContent = 'X wins!';
+                playAgain.style.display = 'block';
             });
-
         }
-
-        if (selection[combo[0]].classList.contains('naught') && selection[combo[1]].classList.contains('naught') && selection[combo[2]].classList.contains('naught')) {
+        
+        if (
+            selection[combo[0]].textContent === 'O' &&
+            selection[combo[1]].textContent === 'O' &&
+            selection[combo[2]].textContent === 'O'
+        ) {
             selection.forEach(function (box) {
                 box.removeEventListener('click', handleBoxClick);
-                infoDisplay.textContent = 'naught wins!'
-                gameHasWinner = true
+                infoDisplay.textContent = 'O wins!';
+                playAgain.style.display = 'block';
+                
 
             });
 
@@ -70,27 +79,25 @@ function checkWin() {
 }
 
 function checkDraw() {
-    if (numberOfplays === 9 && gameHasWinner === false) {
+    if (numberOfplays === 9) {
         infoDisplay.textContent = "It's a Draw!"
+        playAgain.style.display = 'block';
     }
-
+    
 }
 
 function handlePlayAgain() {
     for (const select of selection) {
-        select.classList.remove('naught', 'cross');
+        select.textContent ="";
         select.addEventListener('click', handleBoxClick, { once: true });
     }
-    infoDisplay.textContent = '';
+    currentPlayer = 'X';
+    infoDisplay.textContent = currentPlayer + "'s turn first"
     numberOfplays = 0;
-    gameHasWinner = false;
-    currentPlayer = 'cross';
+    playAgain.style.display = 'none'
 }
-
-
-
 // Event listeners
 playBtn.addEventListener('click', handleStartPlay)
 playAgain.addEventListener('click', handlePlayAgain)
-
+playAgain.style.display = 'none'
 
