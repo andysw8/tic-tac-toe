@@ -22,7 +22,6 @@ function handleStartPlay() {
     });
 //once the button has been pressed, hide the button. 
     playBtn.style.display = 'none' 
-
 }
 
 function handleBoxClick(event) {
@@ -68,14 +67,9 @@ function checkWin() {
                 box.removeEventListener('click', handleBoxClick);
                 infoDisplay.textContent = 'O wins!';
                 playAgain.style.display = 'block';
-                
-
             });
-
         }
-
     })
-
 }
 
 function checkDraw() {
@@ -83,7 +77,6 @@ function checkDraw() {
         infoDisplay.textContent = "It's a Draw!"
         playAgain.style.display = 'block';
     }
-    
 }
 
 function handlePlayAgain() {
@@ -96,6 +89,7 @@ function handlePlayAgain() {
     numberOfplays = 0;
     playAgain.style.display = 'none'
 }
+
 // Event listeners
 playBtn.addEventListener('click', handleStartPlay)
 playAgain.addEventListener('click', handlePlayAgain)
