@@ -2,7 +2,7 @@
 This is my first project. My version of a classic - Tic-Tac-Toe in the jungle. 
 
 ## Getting started
-Click on the link to play [(https://andysw8.github.io/tic-tac-toe/)](https://andysw8.github.io/tic-tac-toe/)
+Click on the link to play [https://andysw8.github.io/tic-tac-toe/](https://andysw8.github.io/tic-tac-toe/)
 - To begin the game, click 'Click to Play' 
 - There are 2 players 'X' and 'O' 
 - You will be prompted who's turn it is above the game square. 
